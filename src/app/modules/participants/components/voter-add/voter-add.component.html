@@ -1,0 +1,79 @@
+<app-header></app-header>
+<div class="voter-add-main">
+  <div class="voter-add-container">
+    <form [formGroup]="voterForm" (ngSubmit)="formSubmit()">
+      <div class="form">
+        <div class="voter-personal-details">
+          <div class="input p-1">
+            <input type="text" placeholder="Full Name" formControlName="name" class="w-full border-solid border-blue bg-gray-100"/>
+          </div>
+          <div class="input p-1">
+            <textarea name="" id="" placeholder="Address..." formControlName="address" class="border-solid border-blue bg-gray-100"></textarea>
+          </div>
+          <div class="input p-1">
+            <div class="relative">
+              <!-- <div class="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                            </svg>
+                            </div> -->
+              <input type="date" class="bg-gray-100 border text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Date of Birth" formControlName="dob" #dobInput (input)="input($event)"/>
+            </div>
+          </div>
+          <div class="input-sex p-1">
+            <div class="flex items-center bg-white min-h-9 p-2">
+              <label for="">Sex :</label>
+              <div class="flex items-center ml-5">
+                <input
+                  id="default-radio-1"
+                  type="radio"
+                  value="male"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" formControlName="sex"/>
+                <label
+                  for="default-radio-1"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >Male</label
+                >
+              </div>
+              <div class="flex items-center ml-5">
+                <input
+                  id="default-radio-2"
+                  type="radio"
+                  value="female"
+                  class="w-4 h-4 text-blue-600 bg-gray-100 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" formControlName="sex"/>
+                <label
+                  for="default-radio-2"
+                  class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                  >Female</label
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="voter-contact-details">
+          <div class="input p-1">
+            <select
+              id="countries"
+              class="bg-gray-100 border text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white py-3" formControlName="department">
+              <option selected hidden>Department</option>
+              <option value="CS">Computer Science</option>
+              <option value="Bio Chemistry">Bio Chemistry</option>
+              <option value="Physics">Physics</option>
+              <option value="English">English</option>
+            </select>
+          </div>
+          <div class="input p-1">
+            <input type="text" placeholder="email" class="w-full bg-gray-100" formControlName="email"/>
+          </div>
+          <div class="input p-1">
+            <input type="text" placeholder="Phone" class="w-full bg-gray-100" formControlName="phone"/>
+          </div>
+        </div>
+        <div class="input p-1">
+            <input class="bg-blue-800 hover:bg-blue-900 text-white cursor-pointer" value="Add Voter" type="submit">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

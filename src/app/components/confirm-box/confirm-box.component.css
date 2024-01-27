@@ -1,0 +1,41 @@
+.btn-parent{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-parent button{
+    margin-right: 10px;
+    background-color: #00008B;
+    min-width: 70px;
+    padding: 5px 0;
+}
+
+.btn-ok{
+    background-color: #ADD8E0 !important;
+    color: #00008B !important;
+}
+
+.mat-parent{
+    padding: 10px 20px;
+}
+
+.mat-parent p{
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
+}
+
+button{
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    cursor: pointer;
+    color: #fff;
+    padding-top: 4px !important;
+}
+
+button:focus {
+    outline: none !important;
+    box-shadow: none;
+  }

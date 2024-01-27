@@ -1,0 +1,68 @@
+<app-header></app-header>
+<div class="list-main">
+    <div class="list-container">
+        <div class="list-titles">
+            <p>Voter List</p>
+            <div class="list-title-right">
+                <div class="voter-search">
+                    <span class="material-symbols-outlined">
+                        search
+                        </span>
+                    <input type="text" (input)="searchVoter()" [(ngModel)]="searchText" placeholder="Search by Voter ID, Name, Dept, Phone or email">
+                </div>
+                <div class="voter-add" (click)="voterAddClick()">
+                    <span class="material-symbols-outlined">
+                        person_add
+                    </span>
+                    <span>Add Voter</span>
+                </div>
+            </div>
+        </div>
+        <div class="list-body">
+            <table>
+                <tr class="table-head">
+                    <th>No</th>
+                    <th>Voter ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Sex</th>
+                    <th>Department</th>
+                    <th>email</th>
+                    <th>Phone</th>
+                    <th></th>
+                </tr>
+                <tr *ngFor="let voter of voterList; let i=index" class="voter-row">
+                    <td>{{ i+1 }}</td>
+                    <td>{{ voter?.id }}</td>
+                    <td>{{ voter?.name }}</td>
+                    <td>{{ voter?.age }}</td>
+                    <td>{{ voter?.sex }}</td>
+                    <td>{{ voter?.department }}</td>
+                    <td>{{ voter?.email }}</td>
+                    <td>{{ voter?.phone }}</td>
+                    <td class="voter-option-icon" (click)="showVoterOptions(voter)">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </td>
+                    <td class="voter-options" *ngIf="voter?.showOptions">
+                            <div class="voter-option">
+                                <span class="material-symbols-outlined">
+                                    edit
+                                    </span>
+                                <span>Edit</span>
+                            </div>
+                            <div class="voter-option" (click)="deleteVoter(voter)">
+                                <span class="material-symbols-outlined">
+                                    delete
+                                    </span>
+                                <span>Delete</span>
+                            </div>
+                    </td>
+                </tr>
+                
+            </table>
+            <p *ngIf="noResult" class="no-result">Oops!!! No results found</p>
+        </div>
+    </div>
+</div>

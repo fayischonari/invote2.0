@@ -1,0 +1,76 @@
+<div class="main">
+    <div class="form-box">
+      <h3>{{ message }}</h3>
+      <form [formGroup]="loginForm" (ngSubmit)="formSubmit()">
+          <div class="form-container">
+              <div *ngIf="type==='register'" class="input-div">
+                  <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  formControlName="name"
+                  placeholder="Name"
+                  (input)="onInput('name')"
+                  />
+                  <div *ngIf="loginForm?.get('name')?.hasError('required') && loginForm?.get('name')?.touched" class="error-msg">
+                    Name cannot be empty
+                </div>
+              </div>
+              <div class="input-div">
+                  <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  formControlName="email"
+                  placeholder="email"
+                  autocomplete="off"
+                  (input)="onInput('email')"
+                  />
+                  <div *ngIf="loginForm?.get('email')?.hasError('email') && loginForm?.get('email')?.touched" class="error-msg">
+                      Please provide a valid email
+                  </div>
+              </div>
+              <div class="input-div">
+                  <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  formControlName="password"
+                  placeholder="Password"
+                  (input)="onInput('password')"
+                  />
+                  <div *ngIf="loginForm?.get('password')?.hasError('minlength') && loginForm?.get('password')?.touched"
+                  class="error-msg">
+                  Minimum length required is 8 characters.
+                  </div>
+                  <div *ngIf="loginForm?.get('password')?.hasError('pattern') && !loginForm?.get('password')?.hasError('minlength') && loginForm?.get('password')?.touched"
+                  class="error-msg">
+                  Password must contain atleast one capital letter, small letter, number and special charactors
+                  </div>
+              </div>
+              <div class="input-div" *ngIf="type==='register'">
+                <input
+                type="password"
+                name="confirmpassword"
+                id="confirmPassword"
+                formControlName="confirmPassword"
+                placeholder="Confirm Password"
+                (input)="onInput('confirmPassword')"
+                />
+                <div *ngIf="loginForm.hasError('passwordMismatch') && loginForm.get('confirmPassword')?.touched" class="error-msg">
+                  Passwords do not match.
+                </div>
+            </div>
+              <div class="btn">
+                <button type="submit">{{ type }}</button>
+              </div>
+          </div>
+          <div >
+            <p *ngIf="type==='register'">Already have an account? <span (click)="typeChange('login')">Login</span></p>
+            <p *ngIf="type==='login'">Don't have an account? <span (click)="typeChange('register')">Register</span></p>
+          </div>
+      </form>
+    </div>
+  </div>
+  
+  

@@ -1,0 +1,130 @@
+.list-main{
+    /* background-color: aqua; */
+    padding: 40px;
+}
+
+.list-container{
+    background-color: #ADD8E0;
+    padding: 20px;
+}
+
+.list-titles{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.list-title-right{
+    display: flex;
+}
+
+.voter-search{
+    display: flex;
+    align-items: center;
+    min-width: 350px;
+    margin-right: 15px;
+    background-color: #fff;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+
+.voter-search input{
+    border: none;
+    outline: none;
+    /* border-radius: 4px; */
+    padding: 5px;
+    width: 100%;
+}
+
+.voter-search input:focus{
+    outline: none;
+}
+
+.voter-add{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.voter-add .material-symbols-outlined{
+    font-size: 19px;
+}
+.list-body{
+    background-color: wheat;
+}
+
+table{
+    width: 100%;
+    padding: 10px;
+}
+
+table tr{
+    border: 1px solid black;
+}
+
+th, td{
+   
+    /* border-collapse: collapse; */
+    padding: 10px;
+    text-align: center;
+}
+
+.voter-row{
+    position: relative;
+}
+
+.voter-option-icon div{
+    width: 3px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+    cursor: pointer;
+}
+
+.voter-option-icon:hover{
+    cursor: pointer;
+}
+
+.voter-options{
+    background-color: rgb(255, 255, 255);
+    padding: 0px !important;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    border-radius: 4px;
+    z-index: 9;
+}
+
+.voter-options .voter-option{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+}
+
+.voter-options .voter-option:hover{
+    cursor: pointer;
+    background-color: #cedddf;
+}
+
+.voter-options .material-symbols-outlined{
+    font-size: 18px;
+}
+
+.no-result{
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* .voter-options {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px; 
+    top: 100%; 
+    left: 0;
+    width: 100%;
+    z-index: 1; 
+  } */
